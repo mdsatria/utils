@@ -52,4 +52,4 @@ def construct_image(r, g, b, ncol, nrow):
 
     img = np.dstack((r, g, b))
 
-    return img 
+    return img
