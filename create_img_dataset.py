@@ -16,8 +16,8 @@ def create_dataset(directory,nrow=64,ncol=64,color='rgb',imgtype='jpg'):
         label : label name
         y : encoded label
     """
-    
-    dirname = Path(directory+'/')
+    directory = directory + '/'
+    dirname = Path(directory)
     folder = [f.name for f in dirname.iterdir() if f.is_dir()]
     label = [] 
 
