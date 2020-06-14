@@ -20,6 +20,12 @@ def manage_file(directory, keyword, new_directory):
     keyword = any char or combination of char that filename might contain
     new_directory = any file that meet condition from keyword will be moved in new_directory
     """
+    if not(Path(directory).exists()):
+        return print('source path doesn\'t exist')
+    elif not(Path(new_directory).exists()):
+        Path(new_directory).mkdir()
+        print('destination path doesn\'t exist, created new folder in {}'.format(new_directory))
+
     p = Path(directory)
     files = []
     for i in p.glob('**/*'):
@@ -32,9 +38,11 @@ def manage_file(directory, keyword, new_directory):
             count += 1
             shutil.move(str(i), new_directory)
 
-    return '{} files that contain keyword \'{}\' have been moved to {}'.format(count, keyword, new_directory)
+    return print('{} files that contain keyword \'{}\' have been moved to {}'.format(count, keyword, new_directory))
 
-directory = ''
-keyword = ''
+"""Usage
+directory = 'some path'
+keyword = 'some path'
 new_directory = ''
 manage_file(directory, keyword, new_directory)
+"""
