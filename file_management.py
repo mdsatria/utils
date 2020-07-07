@@ -58,8 +58,7 @@ def manage_file(directory, keyword, new_directory):
                 elif(inp == 'n'):
                     print("File not moved")
                 else:
-                    print("Wrong input !")
-                    
+                    print("Wrong input !")                    
                     
     return print('{} files that contain keyword \'{}\' have been moved to {}'.format(count, keyword, new_directory))
 
